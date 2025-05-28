@@ -1,7 +1,7 @@
-# CI de nivel 01 - Disparo manual a partir de 1 clique
+# CI de nivel 02 - Disparo agendado
 
 # nome do nosso 'pipeline'
-name: 'Execução Manual'
+name: 'Execução agendada'
 
 # regras de disparo (gatilhos/triggers)
 #gatilho de execução manual = workflow_dispatch
