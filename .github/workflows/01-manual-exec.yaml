@@ -47,11 +47,11 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Notificação de sucesso para Discord
+      - name: Enviar notificação para o Discord
         env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK}}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
-          curl -H "Content-Type: application-json" \
-               -X Post \
-               -d '{"content": "Teste executado"}' \
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{"content": "🚀 Novo push na branch main!"}' \
                $DISCORD_WEBHOOK
