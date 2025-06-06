@@ -42,3 +42,7 @@ jobs:
       # executar os testes e2e
       - name: Executando testes e2e
         run: yarn run e2e
+
+      #notificar Discord
+      - name: Notificação de sucesso
+        run: yarn discord
