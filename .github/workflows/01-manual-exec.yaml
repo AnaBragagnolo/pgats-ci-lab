@@ -43,6 +43,15 @@ jobs:
       - name: Executando testes e2e
         run: yarn run e2e
 
-      #notificar Discord
-      - name: Notificação de sucesso
-        run: yarn discord
+  #notificar Discord
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notificação de sucesso para Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK}}
+        run: |
+          curl -H "Cintent-Type: application-json" \
+               -X Post \
+               -d '{"content": "Teste executado"}' \
+               $DISCORD_WEBHOOK
