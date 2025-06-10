@@ -8,14 +8,13 @@ name: 'Execução agendada'
 
 on:
   schedule:
-  # minuto | hora | dia do mes | mes | dia da semana (crontab.guru)
+    # minuto | hora | dia do mes | mes | dia da semana (crontab.guru)
     - cron: '0 6 * * 4'
 
 # tarefas dentro do pipeline = jobs
 
 jobs:
   e2e-tests:
-
     #maquina que o job vai executar
     runs-on: ubuntu-latest
 
